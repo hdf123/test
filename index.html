@@ -10,6 +10,10 @@
 	video{
 		width:100%;
 	}
+	.a1{
+		width:100%;
+		height:500px;
+	}
 </style>
 	<body>
 		1.
@@ -19,9 +23,59 @@
 		<video  id="video-2" controls="" x5-playsinline="" playsinline="" webkit-playsinline=""  preload="auto">
 			<source src="http://1252583354.vod2.myqcloud.com/2985ef10vodtranscq1252583354/674f0bd75285890795029290945/v.f30.mp4" type="video/mp4"/>
 		</video>
-		3.56565656
+		3.
+		<div class="a1"></div>
 <script type="text/javascript">
 	$('.videos').attr("src","http://1252583354.vod2.myqcloud.com/2985ef10vodtranscq1252583354/fc36d2ea5285890780451231863/v.f30.mp4");
+	
+	
+	scrollEvent();
+	//监听页面滚动事件
+	function scrollEvent() {
+		console.log(111);
+	    window.onscroll = function(e){
+	        scrollFunc();
+	        if(scrollDirection == 'down'){
+	            //页面向下滚动要做的事情
+	            alert(111);
+	        }
+	        else if(scrollDirection == 'up'){
+	            //页面向上滚动要做的事情
+	            alert(222);
+	        }
+	    }
+	}
+	var scrollAction = {x: 'undefined', y: 'undefined'}, scrollDirection;
+	function scrollFunc() {
+	    if (typeof scrollAction.x == 'undefined') {
+	        scrollAction.x = window.pageXOffset;
+	        scrollAction.y = window.pageYOffset;
+	    }
+	    var diffX = scrollAction.x - window.pageXOffset;
+	    var diffY = scrollAction.y - window.pageYOffset;
+	    if (diffX < 0) {
+	        // Scroll right
+	        scrollDirection = 'right';
+	    } else if (diffX > 0) {
+	        // Scroll left
+	        scrollDirection = 'left';
+	    } else if (diffY < 0) {
+	        // Scroll down
+	        scrollDirection = 'down';
+	    } else if (diffY > 0) {
+	        // Scroll up
+	        scrollDirection = 'up';
+	    } else {
+	        // First scroll event
+	    }
+	    scrollAction.x = window.pageXOffset;
+	    scrollAction.y = window.pageYOffset;
+	}
+	
+	
+	
 </script>
+
 	</body>
 </html>
+
