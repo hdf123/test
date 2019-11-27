@@ -52,12 +52,10 @@
         line-height: 28px;
         text-indent: 2em;
     }
-
     .news-list-left {
         width: 729px;
         margin-bottom: 50px;
     }
-
     .news-list-right {
         width: 229px;
     }
@@ -148,7 +146,8 @@
 		                    <button onclick="range()">排行榜</button>
 		                    <button onclick="renovates()">重新开始</button>
 		                </div>
-		                <img src="http://biggsai.com//bigsai.png" width="100%" height="35%">
+		                <img src="" width="100%" height="35%" alt="" />
+		                
 		            </div>
 		        </div>
 		    </div>
@@ -177,7 +176,6 @@
             isling[i][j]=-1;//初始值为0
         }
     }
-    
     function drawChessBoard(){//绘画
         for(var i=0;i<aa+1;i++){
             context.strokeStyle='gray';//可选区域
@@ -190,7 +188,6 @@
         }
     }
     drawChessBoard();//绘制棋盘
-
     function getnei(a){//获得邻居号  random
         var x=parseInt(a/aa);//要精确成整数
         var y=a%aa;
@@ -201,7 +198,6 @@
         if(y-1>=0){mynei.push(x*aa+y-1);}//下节点
         var ran=parseInt(Math.random() * mynei.length );
         return mynei[ran];
-
     }
     function search(a){//找到根节点
         if(tree[parseInt(a/aa)][a%aa]>0){//说明是子节点
@@ -209,7 +205,6 @@
         }else{
         	return a;
         }
-            
     }
     function value(a){//找到树的大小
         if(tree[parseInt(a/aa)][a%aa]>0){//说明是子节点
