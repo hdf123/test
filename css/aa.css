@@ -1,2 +1,6 @@
-@charset "UTF-8";
-.a1 { width: 100px; height: 100px; /*不改*/ background: red; margin: 0; }
+.a1 { width: 5cm; height: 100px; background: rgba(99, 0, 0, 0.5); animation: myfirst 3s infinite; }
+
+@keyframes myfirst { 0% { margin-left: 0;
+    background: red; }
+  100% { margin-left: 5cm;
+    background: yellow; } }
