@@ -199,12 +199,6 @@
         	return a;
         }
     }
-    function value(a){//找到树的大小
-        if(tree[parseInt(a/aa)][a%aa]>0){//说明是子节点
-            return tree[parseInt(a/aa)][a%aa]=value(tree[parseInt(a/aa)][a%aa]);//不能路径压缩
-        }else
-            return -tree[parseInt(a/aa)][a%aa];
-    }
     function union(a,b){//合并
         var a1=search(a);//a根
         var b1=search(b);//b根
@@ -219,7 +213,6 @@
             }
         }
     }
-
     function drawline(a,b){//划线，要判断是上下还是左右
         var x1=parseInt(a/aa);
         var y1=a%aa;
@@ -235,7 +228,6 @@
             context.clearRect(x3*30+16, 29+y3*30,28,2);
         }
     }
-     
     while(search(0)!=search(aa*aa-1)){//主要思路
         var num = parseInt(Math.random() * aa*aa );//产生一个小于196的随机数
         var neihbour=getnei(num);
@@ -308,7 +300,6 @@
 		            e.preventDefault();
 		             gameover();
 		            show();
-	            
 	        	}
 	        }
     	}
@@ -350,7 +341,6 @@
 			           	isling[num][neihbour]=1;isling[neihbour][num]=1;
 			            drawline(num,neihbour);//划线
 			            union(num,neihbour);
-			         
 			        }
 	    		}
      			a=aa*30-10,b=aa*30-10;
@@ -380,22 +370,14 @@
         mytime = document.getElementById('mytime');
         mytime.innerHTML = str;
     }
-
-    function reset(){//重置
-        i=1;
-        time=setInterval(timer,50);
-    }
-
     function start(){//开始
         i=1;
         time=setInterval(timer,50);
     }
-
     function stop(){//暂停
         i=0;
         clearInterval(time);
     }
-
     function toDub(n){//补0操作
         if(n<10){
             return "0"+n;
@@ -415,14 +397,14 @@
     }
     var req;//创建对象 
  	function range(){
-	    var url = "";//ajax               
+	    var url = "";//ajax
 	    //创建一个XMLHttpRequest对象req  
-	     if(window.XMLHttpRequest) {  
+	     if(window.XMLHttpRequest) {
 	        //IE7, Firefox, Opera支持  
 	        req = new XMLHttpRequest();  
 	      }else if(window.ActiveXObject) {  
 	        //IE5,IE6支持  
-	        req = new ActiveXObject("Microsoft.XMLHTTP");  
+	        req = new ActiveXObject("Microsoft.XMLHTTP");
 	      }  
 	     req.open("GET", url, true);  
 	    //onreadystatechange属性存有处理服务器响应的函数,有5个取值分别代表不同状态  
@@ -439,7 +421,7 @@
 	    }else if(window.ActiveXObject) {  
 	        //IE5,IE6支持  
 	        req = new ActiveXObject("Microsoft.XMLHTTP");  
-	    }  
+	    }
 	    req.open("GET", url, true);
 	    //onreadystatechange属性存有处理服务器响应的函数,有5个取值分别代表不同状态  
 	    req.onreadystatechange = callback;

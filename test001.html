@@ -3,15 +3,84 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title></title>
+		<title>聊天气泡</title>
 		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 	</head>
 <style>
-	
+	div{
+		margin-bottom:20px;
+	}
+	.a1{
+		width:0;
+		height:0;
+		border-left:50px solid transparent;
+		border-right:50px solid transparent;
+		border-bottom:100px solid rgba(99,0,0,0.5);
+	}
+	.a2{
+		width:0;
+		height:0;
+		border-right:100px solid transparent;
+		border-top:100px solid rgba(99,0,0,0.5);
+	}
+	.a3{
+	  position: relative;
+	  display: inline-block;
+	  width: 250px;
+	  height:60px;
+	  background-color:green;
+	}
+	.a3::before{
+	  	position: absolute;
+	  	left:236px;
+	  	top:6px;
+	  	content:'';
+	  	width:20px;
+	  	height:20px;
+	 	border:2px solid transparent;
+	  	border-radius:6px;
+	  	background-color:green;
+	  	transform:rotate(45deg);
+	  	z-index: -1;
+	}
+	.a4{
+		line-height: 36px;
+        text-align: center;
+        margin-left: 20px;
+        position: relative;
+        width: 150px;
+        height: 36px;
+        border-radius: 5px;
+        border: 1px solid #7f7f7f;
+        background: #f0f0f0;
+	}
+	.a4:before,.a4:after{
+		content: "";
+        position: absolute;
+        border: 6px solid transparent;
+        top: 12px;
+	}
+    .a4:before{
+        left: -11px;
+        border-right-color: #f0f0f0;
+        z-index: 1;
+    }
+    .a4:after{
+        left: -12px;
+        border-right-color: #7f7f7f;
+        z-index: 0;
+    }
 </style>
 	<body>
-		<div>
-			
-		</div>
+		<div class="a1"></div>
+		<div class="a2"></div>
+		<div class='a3'></div>
+		<div class='a4'></div>
+		
+		
+		
+<script type="text/javascript">
+
+</script>
 	</body>
 </html>
